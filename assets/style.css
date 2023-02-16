@@ -12,6 +12,12 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
+  background-color: #85FFBD;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 .task-button {
   font-size: 20px;
