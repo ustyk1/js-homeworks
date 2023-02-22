@@ -12,6 +12,12 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #E7F2F8;
 }
 .task-button {
   font-size: 20px;
@@ -19,13 +25,13 @@ body {
   border-radius: 10px;
   outline: none;
   border: none;
-  background-color:  #b0fbd3;
-  border: 2px solid rgb(63, 200, 127);
-  box-shadow: 3px 5px 15px 0px rgba(63,200,127,0.7);
+  background-color:  #FFA384;
+  border: 2px solid rgb(116, 189, 203);
+  box-shadow: 3px 5px 15px 0px rgb(93, 173, 188);
 }
 
 .task-button:hover {
-  box-shadow: 3px 10px 15px 0px rgba(247, 247, 247, 0.7);
+  box-shadow: 5px 5px 15px 0px rgba(255, 163, 132, 0.8);
 }
 
 .buttons-wrapper {
@@ -61,19 +67,23 @@ body {
   font-size: 18px;
   padding: 5px 15px;
   border-radius: 10px;
-  background-color:  #b0fbd3;
-  border: 2px solid rgb(63, 200, 127);
+  background-color:  #FFA384;
+  border: 2px solid rgb(116, 189, 203);
 }
 
 .task-input {
   font-size: 18px;
   padding: 5px 15px;
   border-radius: 10px;
-  background-color:  #85FFBD;
-  border: 2px solid rgb(63, 200, 127);
+  background-color:  #FFA384;
+  border: 2px solid rgb(116, 189, 203);
 }
 
 .task-input:focus {
  outline: none;
- box-shadow: 3px 5px 15px 0px rgba(63,200,127,0.7);
+ box-shadow: 5px 5px 15px 0px rgba(255, 163, 132, 0.8);
+}
+
+.active {
+  box-shadow: 5px 5px 15px 0px rgba(255, 163, 132, 0.8); 
 }
