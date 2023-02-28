@@ -1,16 +1,23 @@
-const $resultDiv = document.querySelector('.result');
-const $userInteraction = document.querySelector('.user-interaction');
+import {data} from "./data.js"
 
-const clearInputs = () => document.querySelectorAll('.task-input').forEach(input => input.value = '')
-const clearAnswerBlock = () => $resultDiv.innerHTML = '';
+const $container = document.querySelector('.container > ul');
 
-function writeTaskElements(inputLength, taskText) {
-  $userInteraction.innerHTML = '';
-  $userInteraction.innerHTML += `<p>${taskText}</p>`;
- 
-  for (let i = 1; i <= inputLength; i++) {
-    $userInteraction.innerHTML += `<input type="text" class="task-input input-${i}"></input>`;
-  }
+for (let i = 0; i < data.length; i++) {
+  const {id, language, popularity} = data[i];
 
-  $userInteraction.innerHTML += '<button class="btn-submit">Submit</button>';  
+  $container.innerHTML += `<li class="item item-${i}"><span class="item__name">${language}</span><span class="item__range" data-content="${popularity}"></span></li>`;
 }
+
+const $items = document.querySelectorAll('.item');
+
+$items.forEach(item => {  
+  const percentage = item.lastElementChild.getAttribute('data-content');
+
+  item.lastElementChild.style.flex = percentage / 100 * 5;
+
+  if (percentage < 1 ) {
+    item.lastElementChild.classList.add('lowRange')
+  } else if (percentage > 15) {
+    item.lastElementChild.classList.add('highRange')
+  }
+});

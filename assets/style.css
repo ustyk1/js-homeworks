@@ -12,68 +12,65 @@ body {
   padding: 0;
   font-family: "Roboto", sans-serif;
   font-size: 1.2rem;
-}
-.task-button {
-  font-size: 20px;
-  padding: 10px 20px;
-  border-radius: 10px;
-  outline: none;
-  border: none;
-  background-color:  #b0fbd3;
-  border: 2px solid rgb(63, 200, 127);
-  box-shadow: 3px 5px 15px 0px rgba(63,200,127,0.7);
-}
-
-.task-button:hover {
-  box-shadow: 3px 10px 15px 0px rgba(247, 247, 247, 0.7);
-}
-
-.buttons-wrapper {
-  margin-bottom: 15px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-  justify-content: center;
-}
-
-.user-interaction {
-  height: auto;
-  max-width: 100%;
-  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  flex-wrap: wrap;
-  text-align: center;
-  gap: 10px;
+  background-color: #f59e0b;
+  color: #fffbeb;
+  padding: 30px;
 }
 
-.user-interaction > input {
-  max-width: 300px;
-  font-size: 18px;
-  padding: 5px 15px;
-  border-radius: 10px;
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
 }
 
-.btn-submit {
-  max-width: 200px;
-  font-size: 18px;
-  padding: 5px 15px;
-  border-radius: 10px;
-  background-color:  #b0fbd3;
-  border: 2px solid rgb(63, 200, 127);
+.item {
+  display: flex;
+  align-items: center;
 }
 
-.task-input {
-  font-size: 18px;
-  padding: 5px 15px;
-  border-radius: 10px;
-  background-color:  #85FFBD;
-  border: 2px solid rgb(63, 200, 127);
+.item__name {
+  min-width: 150px;
+  text-align: right;
+  padding: 3px 10px;
 }
 
-.task-input:focus {
- outline: none;
- box-shadow: 3px 5px 15px 0px rgba(63,200,127,0.7);
+.item__range {
+  position: relative;
+  flex: 1;
+  display: inline-block;
+  width: auto;
+  height: 20px;
+  background-color: #8b5cf6;
+}
+
+.item__range::before {
+  content: attr(data-content);
+  position: absolute;
+  left: 5px;
+  width: auto;
+  vertical-align: middle;
+  line-height: 20px;
+  font-size: 0.8rem;
+  color: #f5f3ff;
+}
+
+.item__range.lowRange {
+  background-color: #c4b5fd;
+}
+.item__range.lowRange::before {
+  color: #c4b5fd;
+  left: auto;
+  right: -30px;
+}
+
+.item__range.highRange {
+  background-color: #6d28d9;
 }
