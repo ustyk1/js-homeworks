@@ -34,6 +34,7 @@ function updatePurchaseStatus(input) {
 }
 
 function updatePurchaseAmountFromInput(input) {
+  if (isNaN(+input.value) && Number.isInteger(+input.value)) return;
   purchases.find(purchase => purchase.id === input.dataset.purchaseAmount).amount = Number(input.value);
 }
 
@@ -140,7 +141,7 @@ function renderReceipt(boughtPurchases, formdata) {
   $receiptPurchasesWrapper.innerHTML = boughtPurchases.map(purchase => {
     return `
       <li class="purchases__element">
-        <span>${purchase.nameOfProduct}</span><span>${purchase.amount}</span><span>${purchase.price}</span><span>${purchase.price * purchase.amount}</span>
+        <span>${purchase.nameOfProduct}</span><span>${purchase.amount}</span><span>${purchase.price}</span><span>${(purchase.price * purchase.amount).toFixed(2)}</span>
       </li>
     `
   }).join('');
