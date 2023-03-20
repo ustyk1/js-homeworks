@@ -1,10 +1,8 @@
-/* #dddddd
-#232122
-#a5c05b
-#7ba4a8 */
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
 
 body {
   background-color: #e9f1d3f0;
+  font-family: 'PT Sans', sans-serif;
 }
 
 .wrapper {
@@ -23,6 +21,7 @@ body {
 }
 
 .userText { 
+  font-family: 'PT Sans', sans-serif;
   text-overflow: ellipsis;
   overflow: hidden; 
   width: 200px; 
@@ -41,6 +40,7 @@ body {
 }
 
 button {
+  font-family: 'PT Sans', sans-serif;
   width: 100px; 
   border-radius: 7px;
   padding: 5px;

@@ -1,7 +1,8 @@
-let $input = document.querySelector('.userText');
-let $btnStart = document.querySelector('.btn-start');
-let $btnClear = document.querySelector('.btn-clear');
-let $ul = document.querySelector('.list');
+const $input = document.querySelector('.userText');
+const $btnStart = document.querySelector('.btn-start');
+const $btnClear = document.querySelector('.btn-clear');
+const $ul = document.querySelector('.list');
+const $userEnteredText = document.querySelector('.userEnteredText');
 
 // відслідковуємо натискання кнопки "start" і виконуємо логіку
 $btnStart.addEventListener('click', () => {
@@ -23,6 +24,8 @@ $btnStart.addEventListener('click', () => {
   //наш обєкт сортує від більшого до меншого і отримаємо масив ключів
   let keySort = Object.keys(letters).sort((a, b) =>letters[b] - letters[a])
 
+  $userEnteredText.textContent = $input.value;
+  
   //створюємо змінні з списком і довжиною інпута
   let input_length = $input.value.length;
 
@@ -41,4 +44,7 @@ $btnStart.addEventListener('click', () => {
   $input.value = '';
 });
 
-$btnClear.addEventListener('click', () => ul.innerHTML = '');
+$btnClear.addEventListener('click', () => {
+  $userEnteredText.textContent = '';
+  $ul.innerHTML = '';
+});
