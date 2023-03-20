@@ -5,10 +5,47 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/style.css">
-  <title>Document</title>
+  <script src="https://unpkg.com/rxjs@^7/dist/bundles/rxjs.umd.min.js"></script>
+  <title>Auditories of academy</title>
 </head>
 <body>
+  <header class="header">
+    <div class="header__dropdown dropdown">
+      <div class="dropdown__select">
+        <span>Select auditory</span>
+      </div>
+      <ul class="dropdown__menu menu">
+        <li class="menu__item" data-id="journalism">Journalism</li>
+        <li class="menu__item" data-id="computerScience">Computer science</li>
+        <li class="menu__item" data-id="cyberSecurity">Cyber security</li>
+        <li class="menu__item" data-id="marketing">Marketing</li>
+        <li class="menu__item" data-id="economy">Economy</li>
+        <li class="menu__item" data-id="psychology">Psychology</li>
+      </ul>
+    </div>
 
+    <form action="#" class="header__search-form search-form">
+      <label for="amount">Amount <input type="text" name="amount" id="amount"></label>
+      <select class="search-form__select" name="faculty">
+        <option value="journalism">Journalism</option>
+        <option value="computerScience">Computer science</option>
+        <option value="cyberSecurity">Cyber security</option>
+        <option value="marketing">Marketing</option>
+        <option value="economy">Economy</option>
+        <option value="psychology">Psychology</option>
+      </select>
+      <button class="search-form__submit button" id="searchBtn" type="submit">Search</button>
+    </form>
+    <div class="header__buttons-wrapper">
+      <button class="header__clear-button button" id="clearBtn">Clear</button>
+      <button class="header__sort-button button" id="sortBtn" data-title="Sort lecture halls by the quantity of seats in the one">Sort by the quantity</button>
+      <button class="button" id="alphabetBtn" data-title="Sort lecture halls by name alphabetically">Sort alphabetically</button>
+    </div>
+  </header>
+  <main>
+    <div class="auditories"></div>
+  </main>
+  
   <script src="./assets/index.js" type="module"></script>
 </body>
 </html>
